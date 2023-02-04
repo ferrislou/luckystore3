@@ -7,3 +7,4 @@ for(var i=0; i < updateBtns.length; i++){
     console.log('USER:', 'user 99', productId)
     })
 }
+console.log('USER 2:', 'user 99')
