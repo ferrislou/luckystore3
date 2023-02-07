@@ -108,7 +108,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hant'
+
+LANGUAGES = [
+    ('en', 'English'), 
+    ('zh-hans', 'Simplified Chinese'),
+    ('zh-hant', 'Traditonal Chinese') 
+]
 
 TIME_ZONE = 'UTC'
 
@@ -134,3 +141,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]

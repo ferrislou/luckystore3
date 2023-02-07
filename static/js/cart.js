@@ -1,6 +1,9 @@
 var updateBtns = document.getElementsByClassName('update-cart')
 
+console.log('*** adding listener 01')
+
 for (i = 0; i < updateBtns.length; i++) {
+	console.log('*** adding listener')
 	updateBtns[i].addEventListener('click', function(){
 		var productId = this.dataset.product
 		var action = this.dataset.action

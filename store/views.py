@@ -1,12 +1,30 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 import json
 import datetime
 
 from .models import *
 from .utils import cookieCart, cartData, guestOrder
+from django.utils.translation import get_language
+
+lang = get_language()
+print('**** lang:', lang)
 
 def store(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
+
+    products = Product.objects.order_by('name')
+    # products = Product.objects.all()
+    paginator = Paginator(products, 3)
+    page = request.GET.get('page') #* 'page' no.
+    paged_products = paginator.get_page(page)
+
+    context = {'products':paged_products, 'cartItems':cartItems}
+    return render(request, 'store/store.html', context)
+
+def store_obsolete(request):
     data = cartData(request)
     cartItems = data['cartItems']
     products = Product.objects.all()
