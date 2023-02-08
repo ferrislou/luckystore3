@@ -44,5 +44,4 @@
  			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
  		}
  		console.log('Cart:', cart)
- 	
  
