@@ -35,12 +35,13 @@
 	<script type="text/javascript" src="{% static 'js/testing.js' %}"></script>
 
 	<script type="text/javascript">  
-        console.log(' main kira ')
-  		// Get value of selected option 
-  		var id_ele = document.getElementById("exampleSelect1");
-		var optionValue = id_ele.options.selectedIndex.value;      
-		alert(optionValue);
-		console.log('exampleSelect1 is found good');
+		msgs_js = JSON.parse('{{ msgs|escapejs }}')
+		msgs_js.forEach((msg) => {
+			console.log('msg.fields.msg_id:', msg.fields.msg_id);
+			console.log('msg.fields.en_us:', msg.fields.en_us);
+			console.log('msg.fields.zh_hant:', msg.fields.zh_hant);
+			console.log('msg.fields.zh_hans:', msg.fields.zh_hans);
+		});
   	</script>
 
 </body>

@@ -5,23 +5,26 @@ import json
 import datetime
 
 from .models import *
+
+from multilang.models import MultiLang
 from .utils import cookieCart, cartData, guestOrder
 from django.utils.translation import get_language
 
 lang = get_language()
 print('**** lang:', lang)
 
+from django.core import serializers
+
 def store(request):
     data = cartData(request)
     cartItems = data['cartItems']
 
     products = Product.objects.order_by('name')
-    # products = Product.objects.all()
-    paginator = Paginator(products, 3)
+    paginator = Paginator(products, 6)
     page = request.GET.get('page') #* 'page' no.
     paged_products = paginator.get_page(page)
-
-    context = {'products':paged_products, 'cartItems':cartItems}
+    msgs = serializers.serialize("json", MultiLang.objects.all())
+    context = {'products':paged_products, 'cartItems':cartItems, 'msgs':msgs}
     return render(request, 'store/store.html', context)
 
 def store_obsolete(request):
