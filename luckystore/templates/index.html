@@ -5,29 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>luckystore</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="static/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="static/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header"><a class="navbar-brand" href="#"><img id="logo" src="assets/img/logo.svg"><strong>Lucky</strong>&nbsp;Store</a><button data-toggle="collapse" class="navbar-toggle collapsed" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+            <div class="navbar-header"><a class="navbar-brand" href="#"><img id="logo" src="static/img/logo.svg"><strong>Lucky</strong>&nbsp;Store</a><button data-toggle="collapse" class="navbar-toggle collapsed" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Products</a></li>
+                    <li class="active"><a href="{% url 'store' %}">Products</a></li>
                     <li><a href="#">Pricing </a></li>
                     <li><a href="#">Order </a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#"><select>
                                 <option value="12" selected="">English</option>
                                 <option value="13">繁體中文</option>
-                                <option value="14">簡體中文</option>
+                                <option value="14">简体中文</option>
                             </select></a></li>
                 </ul>
             </div>
@@ -67,13 +67,13 @@
         <h1>Gallery </h1>
         <div class="row">
             <div class="col-md-4">
-                <div class="thumbnail"><a data-lightbox="cakes" href="assets/img/model.jpg" target="_blank"><img class="img-responsive" src="assets/img/model.jpg"></a></div>
+                <div class="thumbnail"><a data-lightbox="cakes" href="static/img/model.jpg" target="_blank"><img class="img-responsive" src="static/img/model.jpg"></a></div>
             </div>
             <div class="col-md-4">
-                <div class="thumbnail"><a data-lightbox="cakes" href="desert-2.jpg" target="_blank"><img class="img-responsive" src="assets/img/cosmetic_products.png"></a></div>
+                <div class="thumbnail"><a data-lightbox="cakes" href="desert-2.jpg" target="_blank"><img class="img-responsive" src="static/img/cosmetic_products.png"></a></div>
             </div>
             <div class="col-md-4">
-                <div class="thumbnail"><a data-lightbox="cakes" href="desert-3.jpg" target="_blank"><img class="img-responsive" src="assets/img/japanese.jpg"></a></div>
+                <div class="thumbnail"><a data-lightbox="cakes" href="desert-3.jpg" target="_blank"><img class="img-responsive" src="static/img/japanese.jpg"></a></div>
             </div>
         </div>
     </div>
@@ -105,8 +105,8 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox-plus-jquery.min.js"></script>
 </body>
 
