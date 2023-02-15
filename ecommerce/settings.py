@@ -62,7 +62,9 @@ ROOT_URLCONF = 'ecommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'luckystore')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(BASE_DIR, 'luckystore')
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -154,3 +156,6 @@ LOCALE_PATHS = [
 ]
 print('LOCALE_PATHS 99:', LOCALE_PATHS)
 
+# Heroku settings
+import django_keroku
+django_keroku.settings(locals())

@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from multilang.models import MultiLang
 
-def showLuckyStore(request):
-    context = {'form': 'form 999'}
-    print('*** show lucky store:', context)
+from django.core import serializers
+
+def luckyStore(request):
+    msgs = serializers.serialize("json", MultiLang.objects.all())
+    context = {'products':'', 'msgs':msgs}
+    print('*** got msgs for luckystore:', context)
     return render(request, 'templates/index.html', context)
