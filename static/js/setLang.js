@@ -1,10 +1,27 @@
 
+document.getElementById("lang_selector").onchange = langChangeListener;
+
+const langs = ['en_us', 'zh-hans', 'zh-hant'];
+		
+function langChangeListener()
+{
+    var value = this.value
+    const langs = ['en_us', 'zh-hans', 'zh-hant'];
+
+    if (langs.includes(value)){
+        changeLang(value);
+    }
+}
+function changeLang(lang) {
+	console.log("Language selected", lang);
+}
+
 language = localStorage.getItem("language")
 if (language === null) {
     localStorage.setItem("language", "en");
 } else {
     console.log("preferred language:", language)
-    if (language === "en") {
+    if (language === "en_us") {
         console.log("preferred language:", language);
     } else if (language === "zh-hans") {
         console.log("preferred language:", language);
