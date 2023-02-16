@@ -157,5 +157,5 @@ LOCALE_PATHS = [
 print('LOCALE_PATHS 99:', LOCALE_PATHS)
 
 # Heroku settings
-import django_keroku
-django_keroku.settings(locals())
+# import django_keroku
+# django_keroku.settings(locals())
