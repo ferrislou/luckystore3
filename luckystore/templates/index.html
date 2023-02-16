@@ -41,9 +41,9 @@
         </div>
     </div>
 
-    <h2 class="text-center" id='welcome'>Welcome waiting for input</h2>
+    <p class="text-center" id='datetime'></p>
 
-    <div class="container site-section" id="welcome">
+    <div class="container site-section" id="welcome2">
         <h1>Welcome to Lucky Store</h1>
         <p>Lucky Store was founded in Hong Kong in 2023 with the mission of giving great commodities to the world. Our dedication and high quality products have won us numerous awards.</p>
     </div>
@@ -141,33 +141,6 @@
             }
 		});
   	</script>
-
-	<script type="text/javascript">  
-        window.setInterval(changeText, 5000);
-        var currentdate = new Date(); 
-        var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                        + (currentdate.getMonth()+1)  + "/" 
-                        + currentdate.getFullYear() + " @ "  
-                        + currentdate.getHours() + ":"  
-                        + currentdate.getMinutes() + ":" 
-                        + currentdate.getSeconds();
-        console.log('datetime:', datetime)
-
-        function changeText(){
-            ele_returned = document.getElementById('welcome').innerHTML = 'time function worked';
-        }
-
-
-        var currentdate = new Date(); 
-        var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                        + (currentdate.getMonth()+1)  + "/" 
-                        + currentdate.getFullYear() + " @ "  
-                        + currentdate.getHours() + ":"  
-                        + currentdate.getMinutes() + ":" 
-                        + currentdate.getSeconds();
-
-
-    </script>
 
 </body>
 
