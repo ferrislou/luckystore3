@@ -34,6 +34,8 @@
 
 	<script type="text/javascript" src="{% static 'js/testing.js' %}"></script>
 
+	<script type="text/javascript" src="{% static 'js/setLang.js' %}"></script>
+
 	<script type="text/javascript">  
 		msgs_js = JSON.parse('{{ msgs|escapejs }}')
 		msgs_js.forEach((msg) => {
@@ -43,6 +45,7 @@
 			console.log('msg.fields.zh_hans:', msg.fields.zh_hans);
 		});
   	</script>
+
 
 </body>
 </html>
