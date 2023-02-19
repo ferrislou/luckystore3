@@ -16,22 +16,28 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     digital = models.BooleanField(default=False, null=True, blank=False)
     image_main = models.ImageField(null=True, blank=True)
-    image_1 = models.ImageField(null=True, blank=True)
-    image_2 = models.ImageField(null=True, blank=True)
-    image_3 = models.ImageField(null=True, blank=True)
-    image_4 = models.ImageField(null=True, blank=True)
-    image_5 = models.ImageField(null=True, blank=True)
-    image_6 = models.ImageField(null=True, blank=True)
+    image1 = models.ImageField(null=True, blank=True)
+    image2 = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.name
 
     @property
     def imageURL(self):
-        try:
-            url = self.image_main.url
-        except:
-            url = ''
+        try: url = self.image_main.url
+        except: url = ''
+        return url
+
+    @property
+    def image1URL(self):
+        try: url = self.image1.url
+        except: url = ''
+        return url
+
+    @property
+    def image2URL(self):
+        try: url = self.image2.url
+        except: url = ''
         return url
 
 class Order(models.Model):
