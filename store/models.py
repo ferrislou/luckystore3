@@ -59,7 +59,6 @@ class Order(models.Model):
                 shipping = True
         return shipping
 
-
     @property
     def get_cart_total(self):
         orderitems = self.orderitem_set.all()

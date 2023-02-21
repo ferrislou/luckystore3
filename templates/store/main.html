@@ -66,6 +66,9 @@
 <body>
     {% include 'partials/_navbar.html' %}
 
+    <p class="text-center" id='datetime'>***</p>
+    <p class="text-center" id='welcome'>hellow</p>
+
     <div class="container">
             <br>
             {% block content %}
@@ -82,7 +85,7 @@
 
 	<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 
-	<script type="text/javascript" src="{% static 'js/testing.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/setDatetime.js' %}"></script>
 
 	<script type="text/javascript" src="{% static 'js/setLang.js' %}"></script>
 
