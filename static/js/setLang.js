@@ -1,7 +1,13 @@
+language = localStorage.getItem("language")
+if (language === null){
+    localStorage.setItem("language", "en");
+}
+
 ele_returned = document.getElementById("lang_selector");
 if (ele_returned !== null){
     ele_returned.onchange = langChangeListener;
 }
+
 		
 const langs = ['en', 'zh'];
 
@@ -41,6 +47,13 @@ function changeLang_peter(lang) {
       if (langEle == lang) {
         var langElems = document.querySelectorAll('.' + langEle)
         langElems.forEach((elem) => {
+          //console.log('elem.innerHTML:', elem.innerHTML)
+          //console.log('elem.innerText:', elem.innerText)
+          console.log('length, elem.innerText:', elem.innerText.length, elem.innerText, typeof elem.innerText)
+          // console.log('typeof elem.innerText:', typeof elem.innerText)
+          if (elem.innerText === null){
+              console.log('elem.innerText === null')
+          }
           elem.style.display = "block"
         })
       }
