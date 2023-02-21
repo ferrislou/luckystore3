@@ -43,10 +43,7 @@ function changeLang(lang) {
       if (langEle == lang) {
         var langElems = document.querySelectorAll('.' + langEle)
         langElems.forEach((elem) => {
-          //console.log('elem.innerHTML:', elem.innerHTML)
-          //console.log('elem.innerText:', elem.innerText)
           console.log('length, elem.innerText:', elem.innerText.length, elem.innerText, typeof elem.innerText)
-          // console.log('typeof elem.innerText:', typeof elem.innerText)
           if (elem.innerText === null){
               console.log('elem.innerText === null')
           }
