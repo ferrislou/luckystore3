@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
-
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200, null=True)
@@ -12,11 +10,11 @@ class Customer(models.Model):
         return self.name
 
 class Product(models.Model):
-    name = models.CharField(max_length=200, null=True)
-    name_zh = models.CharField(max_length=200, null=False)
+    name = models.CharField(max_length=200, null=False, default='')
+    name_zh = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    digital = models.BooleanField(default=False, null=True, blank=False)
-    image_main = models.ImageField(null=True, blank=True)
+    digital = models.BooleanField(default=False, null=True, blank=False) #! "blank=False" doesn't raise error
+    image_main = models.ImageField(null=True, blank=True) 
     image1 = models.ImageField(null=True, blank=True)
     image2 = models.ImageField(null=True, blank=True)
 
@@ -93,4 +91,3 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return self.address
-

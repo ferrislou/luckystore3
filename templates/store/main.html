@@ -99,6 +99,29 @@
 		});
   	</script>
 
+	<script type="text/javascript">  
+		msgs_js = JSON.parse('{{ msgs|escapejs }}');
+
+		msgs_js.forEach((msg) => {
+			console.log('msg.fields.msg_id:', msg.fields.msg_id);
+			console.log('msg.fields.en_us:', msg.fields.en_us);
+			console.log('msg.fields.zh_hant:', msg.fields.zh_hant);
+			console.log('msg.fields.zh_hans:', msg.fields.zh_hans);
+            ele_returned = document.getElementById(msg.fields.msg_id)
+            if (ele_returned !== null) {
+                language = localStorage.getItem("language")
+                if (language === null) {
+                    ele_returned.innerHTML = msg.fields.en_us;
+                }else{
+                    if (language === 'en'){
+                        ele_returned.innerHTML = msg.fields.en_us;
+                    } else if (language === 'zh') {
+                        ele_returned.innerHTML = msg.fields.zh_hant;
+                    }
+                }
+            }
+		});
+  	</script>
 
 </body>
 </html>

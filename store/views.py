@@ -27,13 +27,6 @@ def store(request):
     context = {'products':paged_products, 'cartItems':cartItems, 'msgs':msgs}
     return render(request, 'store/store.html', context)
 
-def store_obsolete(request):
-    data = cartData(request)
-    cartItems = data['cartItems']
-    products = Product.objects.all()
-    context = {'products':products, 'cartItems':cartItems}
-    return render(request, 'store/store.html', context)
-
 def cart(request):
     data = cartData(request)
     cartItems = data['cartItems']

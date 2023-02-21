@@ -25,6 +25,7 @@ function langChangeListener()
     if (langs.includes(value)){
         localStorage.setItem("language", value);
         changeLang(value);
+        location.reload()
     }
 }
 
